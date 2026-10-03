@@ -1,0 +1,61 @@
+# folkways config. The setup skill fills this in; edit by PR.
+# The framework version is pinned in package.json, not here.
+
+mode: team                     # team | solo; solo has no team or members
+team: { name: folkways, slug: folkways }
+
+members:                       # handle = people/<handle>/
+  - { handle: summer, github: summer-jordan, name: Summer Jordan }
+
+tracker:                       # ticket skill
+  type: github                 # jira | github | linear
+  base_url: https://github.com/sumsolution/folkways
+
+docs:                          # research, adr
+  type: none                   # confluence | none
+
+repos:                         # research, review, worktrees
+  - { name: folkways, url: git@github.com:sumsolution/folkways.git, default_branch: main, owner: team }
+
+research:
+  sources:                     # searched in this order; skip what doesn't apply
+    - { name: knowledge, kind: local }
+    - { name: team repos, kind: repos }
+    - { name: web, kind: web }
+
+git:
+  commit_convention: angular   # angular | pattern | none
+  commit_pattern: ""           # Go (RE2) regex on the subject line; used when commit_convention: pattern
+  scopes: [cli, content, templates, skills, hooks, evals, docs, test, build, research, folkways, state, efforts, knowledge, people]  # folkways repo, then this one
+  branch_pattern: "{type}/{ticket}-{slug}"
+  merge: squash
+
+review:
+  trigger: pre-push            # on-demand | after-commit | pre-push
+
+adr:
+  targets: [repo]              # confluence and/or repo
+  repo_path: docs/adr
+  reviewers: { min: 0, outside_team: 0 }  # one-person team
+
+qa:
+  allowed_envs: [local, dev]   # agents may drive a browser here without asking
+
+notifications:
+  primary: github              # @mention on the draft PR
+
+models:                        # per tool; cheap first, escalate
+  claude: { cheap: sonnet, strong: opus }
+
+handoff:
+  bands: [125000, 150000, 200000]
+
+knowledge_audit:
+  cadence: monthly
+  tool: claude                 # claude | copilot (which CLI the Action runs)
+
+hooks:                         # every hook is on unless set to false here
+  git-guard: true
+  context-band: true
+  precompact: true
+  session-start: true

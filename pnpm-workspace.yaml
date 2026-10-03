@@ -1,0 +1,8 @@
+publicHoistPattern:
+  - "@folkways/hooks-*"
+# Temporary: install from local tarballs until 0.1.0 is on npm. Rebuild them with scripts/pack.ts in the folkways repo.
+overrides:
+  "@folkways/hooks-darwin-arm64": "file:vendor/folkways-hooks-darwin-arm64-0.1.0.tgz"
+  "@folkways/hooks-darwin-x64": "file:vendor/folkways-hooks-darwin-x64-0.1.0.tgz"
+  "@folkways/hooks-linux-arm64": "file:vendor/folkways-hooks-linux-arm64-0.1.0.tgz"
+  "@folkways/hooks-linux-x64": "file:vendor/folkways-hooks-linux-x64-0.1.0.tgz"

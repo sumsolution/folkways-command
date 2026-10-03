@@ -156,3 +156,79 @@ snapshots:
       '@pnpm/exe.win32-x64': 12.8.1
 
 ---
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+overrides:
+  '@folkways/hooks-darwin-arm64': file:vendor/folkways-hooks-darwin-arm64-0.1.0.tgz
+  '@folkways/hooks-darwin-x64': file:vendor/folkways-hooks-darwin-x64-0.1.0.tgz
+  '@folkways/hooks-linux-arm64': file:vendor/folkways-hooks-linux-arm64-0.1.0.tgz
+  '@folkways/hooks-linux-x64': file:vendor/folkways-hooks-linux-x64-0.1.0.tgz
+
+importers:
+
+  .:
+    devDependencies:
+      '@folkways/cli':
+        specifier: file:vendor/folkways-cli-0.1.0.tgz
+        version: file:vendor/folkways-cli-0.1.0.tgz
+
+packages:
+
+  '@folkways/cli@file:vendor/folkways-cli-0.1.0.tgz':
+    resolution: {integrity: sha512-bVWnPBWNg1L6ooVYIBbc8PnktycoCYZe2/LvF9HYJ1s9dRD2qbvvc2u7G3jdYDOKLdazsPHE7AmHKv6QDfziOg==, tarball: file:vendor/folkways-cli-0.1.0.tgz}
+    version: 0.1.0
+    engines: {node: '>=24'}
+    hasBin: true
+
+  '@folkways/hooks-darwin-arm64@file:vendor/folkways-hooks-darwin-arm64-0.1.0.tgz':
+    resolution: {integrity: sha512-ChVzYrEr3Q7wsoVs7NPG9rCjjPU1XJvC2mqdYARLOa2Id3JQ9Johmxpnxnul4kqzFks7AvSNAZ4qdPUFm4AvFA==, tarball: file:vendor/folkways-hooks-darwin-arm64-0.1.0.tgz}
+    version: 0.1.0
+    cpu: [arm64]
+    os: [darwin]
+    hasBin: true
+
+  '@folkways/hooks-darwin-x64@file:vendor/folkways-hooks-darwin-x64-0.1.0.tgz':
+    resolution: {integrity: sha512-siOFQnkgzbSJhUL/o6NqpjnRoBE5mJPf48QaGJr+AEhXQ4xTO77N8v9QJzy0PIZ7+F2S1HQnQjrpIa2XdvVmrA==, tarball: file:vendor/folkways-hooks-darwin-x64-0.1.0.tgz}
+    version: 0.1.0
+    cpu: [x64]
+    os: [darwin]
+    hasBin: true
+
+  '@folkways/hooks-linux-arm64@file:vendor/folkways-hooks-linux-arm64-0.1.0.tgz':
+    resolution: {integrity: sha512-rqsqJ7k5yxxxjyg28tEndB2txLUZIpaHvbX6FMfEcaWMNifckSZiYGly/tAZNXLXk342vss41IfwgRbGAfohpg==, tarball: file:vendor/folkways-hooks-linux-arm64-0.1.0.tgz}
+    version: 0.1.0
+    cpu: [arm64]
+    os: [linux]
+    hasBin: true
+
+  '@folkways/hooks-linux-x64@file:vendor/folkways-hooks-linux-x64-0.1.0.tgz':
+    resolution: {integrity: sha512-fUpGV5p4rjQR9CV2BhbuCtSOeaVPu1p4JxUfjWTtsKMGTBUuqsPgdQzk2FKGP+D38CgWxcgpDT4/QDq8PuXI/w==, tarball: file:vendor/folkways-hooks-linux-x64-0.1.0.tgz}
+    version: 0.1.0
+    cpu: [x64]
+    os: [linux]
+    hasBin: true
+
+snapshots:
+
+  '@folkways/cli@file:vendor/folkways-cli-0.1.0.tgz':
+    optionalDependencies:
+      '@folkways/hooks-darwin-arm64': file:vendor/folkways-hooks-darwin-arm64-0.1.0.tgz
+      '@folkways/hooks-darwin-x64': file:vendor/folkways-hooks-darwin-x64-0.1.0.tgz
+      '@folkways/hooks-linux-arm64': file:vendor/folkways-hooks-linux-arm64-0.1.0.tgz
+      '@folkways/hooks-linux-x64': file:vendor/folkways-hooks-linux-x64-0.1.0.tgz
+
+  '@folkways/hooks-darwin-arm64@file:vendor/folkways-hooks-darwin-arm64-0.1.0.tgz':
+    optional: true
+
+  '@folkways/hooks-darwin-x64@file:vendor/folkways-hooks-darwin-x64-0.1.0.tgz':
+    optional: true
+
+  '@folkways/hooks-linux-arm64@file:vendor/folkways-hooks-linux-arm64-0.1.0.tgz':
+    optional: true
+
+  '@folkways/hooks-linux-x64@file:vendor/folkways-hooks-linux-x64-0.1.0.tgz':
+    optional: true
